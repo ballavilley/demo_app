@@ -1,0 +1,25 @@
+<h1>Listing microplsts</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @microplsts.each do |microplst| %>
+  <tr>
+    <td><%= microplst.content %></td>
+    <td><%= microplst.user_id %></td>
+    <td><%= link_to 'Show', microplst %></td>
+    <td><%= link_to 'Edit', edit_microplst_path(microplst) %></td>
+    <td><%= link_to 'Destroy', microplst, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Microplst', new_microplst_path %>
